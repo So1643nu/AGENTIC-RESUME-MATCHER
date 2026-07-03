@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Resume Matcher</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◎</span>
+      <span class="brand-name">Agentic Resume Matcher</span>
+    </div>
+    <div class="brand-sub">Parser → Retriever (RAG) → Scorer → Suggester</div>
+  </header>
+
+  <main class="layout">
+
+    <section class="panel input-panel">
+      <h2>1. Job Description</h2>
+      <select id="sampleJobs">
+        <option value="">-- Pick a sample job (optional) --</option>
+      </select>
+      <textarea id="jobDescription" rows="7" placeholder="Paste a job description here, or pick a sample above..."></textarea>
+
+      <h2>2. Your Resume</h2>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="upload">Upload File</button>
+        <button class="tab-btn" data-tab="paste">Paste Text</button>
+      </div>
+      <div id="uploadTab" class="tab-content active">
+        <input type="file" id="resumeFile" accept=".pdf,.txt">
+        <p class="hint">Accepts .pdf or .txt</p>
+      </div>
+      <div id="pasteTab" class="tab-content">
+        <textarea id="resumeText" rows="7" placeholder="Paste your resume text here..."></textarea>
+      </div>
+
+      <button id="analyzeBtn" class="primary-btn">Run Agent Pipeline</button>
+      <p id="errorMsg" class="error"></p>
+    </section>
+
+    <section class="panel result-panel">
+      <h2>Agent Pipeline Result</h2>
+
+      <div id="loadingState" class="hidden">
+        <div class="spinner"></div>
+        <p>Agents working: parsing → retrieving → scoring → suggesting...</p>
+      </div>
+
+      <div id="emptyState" class="empty-state">
+        <p>Run the pipeline to see the fit score, matched/missing skills, and AI suggestions here.</p>
+      </div>
+
+      <div id="resultState" class="hidden">
+        <div class="score-block">
+          <div class="score-circle" id="scoreCircle">
+            <span id="scoreNumber">0</span>
+          </div>
+          <div>
+            <div class="verdict" id="verdictText">--</div>
+            <div class="source" id="sourceText"></div>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <div>
+            <h3>✅ Matched Skills</h3>
+            <ul id="matchedSkills" class="skill-list matched"></ul>
+          </div>
+          <div>
+            <h3>⚠️ Missing Skills</h3>
+            <ul id="missingSkills" class="skill-list missing"></ul>
+          </div>
+        </div>
+
+        <h3>💡 Suggestions</h3>
+        <pre id="suggestionsText" class="suggestions-box"></pre>
+
+        <details class="trace-details">
+          <summary>Agent Trace (debug / demo view)</summary>
+          <ul id="agentTrace" class="trace-list"></ul>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Agentic AI Mini Project · Flask + RAG (TF-IDF retrieval) + optional local LLM (Ollama)
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "jd_data_analyst",
+    "title": "Data Analyst",
+    "description": "We are looking for a Data Analyst skilled in Python, SQL, Excel, data visualization, Power BI or Tableau, statistics, and communication. Experience with pandas, numpy, and dashboard creation is a plus. Candidate should be able to clean data, build reports, and present insights to stakeholders."
+  },
+  {
+    "id": "jd_backend_developer",
+    "title": "Backend Developer",
+    "description": "Seeking a Backend Developer with strong knowledge of Python, Flask or Django, REST APIs, SQL databases, Git, Docker, and system design fundamentals. Experience with authentication, testing, and deployment on cloud platforms like AWS or Azure is preferred."
+  },
+  {
+    "id": "jd_ml_engineer",
+    "title": "Machine Learning Engineer",
+    "description": "Looking for a Machine Learning Engineer familiar with Python, scikit-learn, TensorFlow or PyTorch, data preprocessing, model evaluation, and deployment. Knowledge of NLP, computer vision, or LLMs is a strong plus. Should understand statistics and be comfortable with Git and cloud tools."
+  },
+  {
+    "id": "jd_frontend_developer",
+    "title": "Frontend Developer",
+    "description": "We need a Frontend Developer proficient in HTML, CSS, JavaScript, React, responsive design, and REST API integration. Experience with Git, UI/UX principles, and modern build tools like Vite or Webpack is desirable."
+  },
+  {
+    "id": "jd_ai_engineer",
+    "title": "AI / Agentic AI Engineer",
+    "description": "Hiring an AI Engineer experienced in Python, LLMs, prompt engineering, RAG pipelines, vector databases, agent orchestration frameworks, Flask or FastAPI for backend integration, and Git for version control. Understanding of embeddings, retrieval systems, and multi-agent workflows is required."
+  }
+]
